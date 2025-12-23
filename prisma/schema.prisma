@@ -155,6 +155,7 @@ model Project {
   createdAt       DateTime      @default(now())
   updatedAt       DateTime      @updatedAt
   
+  
   // Relations
   client          Client        @relation(fields: [clientId], references: [id], onDelete: Cascade)
   freelancer      Freelancer?   @relation(fields: [freelancerId], references: [id])
@@ -162,6 +163,7 @@ model Project {
   contracts       Contract[]
   reviews         Review[]
   messages        Message[]
+ 
 }
 
 enum ProjectCategory {
