@@ -186,7 +186,7 @@ export async function POST(request: NextRequest) {
         client: {
           include: { user: { select: { name: true, email: true } } },
         },
-        // _count: { select: { assignments: true } },
+        // _count: { select: { assignments: projecttrue } },
       },
     });
 

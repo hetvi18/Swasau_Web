@@ -77,6 +77,7 @@ interface FreelancerProfile {
   averageRating: number;
   createdAt: string;
   updatedAt: string;
+  name?: string;
 }
 
 interface Project {
