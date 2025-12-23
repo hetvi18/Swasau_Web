@@ -27,7 +27,7 @@ export function Navbar() {
     { name: "About", href: "/about" },
     { name: "Internship", href: "/internship" },
     { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+    { name: "Contact Us ", href: "/contact" },
   ];
 
   return (
@@ -105,14 +105,14 @@ export function Navbar() {
                 ) : (
                   // Guest user buttons
                   <>
-                    <Link href="/contact">
+                    {/* <Link href="/contact">
                       <Button
-                        variant="ghost"
+                        variant="ghos"
                         className="text-muted-foreground hover:text-primary"
                       >
                         Contact Us
                       </Button>
-                    </Link>
+                    </Link> */}
                     <Link href="/login">
                       <Button
                         variant="outline"

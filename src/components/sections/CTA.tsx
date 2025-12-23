@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Shield, Zap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export function CTA() {
   return (
@@ -93,29 +94,41 @@ export function CTA() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
-              <Button
-                size="xl"
-                className="group relative overflow-hidden shadow-lg hover:shadow-xl bg-primary text-primary-foreground hover:bg-primary/90"
-              >
-                <span className="relative z-10 flex items-center gap-2">
-                  Get a Quote
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </span>
-                <motion.div
-                  className="absolute inset-0 bg-white/20"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
-                />
-              </Button>
-
-              <Button
+             <Link href="/contact">
+                      <Button className="group relative overflow-hidden" size="xl">
+                        <span className="relative z-10 flex items-center gap-2">
+                          Get a Quote
+                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                        </span>
+                        <motion.div
+                          className="absolute inset-0 bg-white/20"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.6 }}
+                        />
+                      </Button>
+                </Link>
+             <Link href="/contact">
+                      <Button className="border-2 border-border hover:bg-muted text-foreground" size="xl" variant="outline">
+                        <span className="relative z-10 flex items-center gap-2">
+                          Schedule a Call
+                          {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" /> */}
+                        </span>
+                        <motion.div
+                          className="absolute inset-0 bg-white/20"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.6 }}
+                        />
+                      </Button>
+                </Link>
+              {/* <Button
                 variant="outline"
                 size="xl"
                 className="border-2 border-border hover:bg-muted text-foreground"
               >
                 Schedule a Call
-              </Button>
+              </Button> */}
             </motion.div>
 
             {/* Feature Highlights */}

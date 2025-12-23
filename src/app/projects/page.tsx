@@ -124,9 +124,9 @@ export default function ProjectsPage() {
                 transition={{ duration: 0.8 }}
                 className="mb-4"
               >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                {/* <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   Our Projects
-                </span>
+                </span> */}
               </motion.div>
 
               <motion.h1
@@ -156,11 +156,11 @@ export default function ProjectsPage() {
           </ScrollReveal>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
             {projects.map((project, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card
-                  className="group hover:shadow-xl transition-all duration-300 border border-border h-full cursor-pointer"
+                  className="group hover:shadow-xl transition-all duration-300 border border-border h-full cursor-pointer flex flex-col h-full"
                   onClick={() =>
                     window.open(
                       `/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`,
@@ -168,7 +168,7 @@ export default function ProjectsPage() {
                     )
                   }
                 >
-                  <CardHeader className="pb-4">
+                  <CardHeader className="pb-4 flex-shrink-0">
                     <div
                       className={`w-12 h-12 ${project.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
                     >
@@ -222,7 +222,7 @@ export default function ProjectsPage() {
 
                     <Button
                       variant="outline"
-                      className="w-full group/btn mt-auto"
+                      className="w-full group/btn mx-auto"
                       asChild
                     >
                       <Link href="/contact">

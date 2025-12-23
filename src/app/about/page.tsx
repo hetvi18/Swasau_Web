@@ -152,9 +152,9 @@ export default function AboutPage() {
                 transition={{ duration: 0.8 }}
                 className="mb-4"
               >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                {/* <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   About Us
-                </span>
+                </span> */}
               </motion.div>
 
               <motion.h1

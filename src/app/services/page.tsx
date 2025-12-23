@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Cpu,
@@ -16,6 +17,17 @@ import {
 import Link from "next/link";
 
 export default function ServicesPage() {
+  const [expanded, setExpanded] = useState(false);
+
+   const [expandedCards, setExpandedCards] = useState({});
+
+  // const toggleExpand = (index) => {
+  //   setExpandedCards(prev => ({
+  //     ...prev,
+  //     [index]: !prev[index]
+  //   }));
+  // };
+
   const services = [
     {
       icon: Cpu,
@@ -122,9 +134,9 @@ export default function ServicesPage() {
                 transition={{ duration: 0.8 }}
                 className="mb-4"
               >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                {/* <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   Our Services
-                </span>
+                </span> */}
               </motion.div>
 
               <motion.h1
@@ -153,8 +165,152 @@ export default function ServicesPage() {
             </div>
           </ScrollReveal>
 
+{/* Service grid no 3 */}
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+      {services.map((service, index) => {
+        // const isExpanded = expandedCards[index];
+        
+        return (
+          <ScrollReveal key={index} delay={index * 0.1}>
+            <Card className="group hover:shadow-xl transition-all duration-300 border border-border h-[420px] w-full flex flex-col overflow-hidden">
+              <CardHeader className="pb-4 flex-shrink-0">
+                <div
+                  className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <service.icon className={`w-6 h-6 ${service.color}`} />
+                </div>
+                <CardTitle className="text-xl font-semibold text-foreground text-center">
+                  {service.title}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="flex flex-col h-full p-6 pt-0">
+                <motion.p 
+                  className="text-muted-foreground mb-4 flex-grow line-clamp-3"
+                  animate={{ height: "auto" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {service.description}
+                </motion.p>
+
+                <motion.ul 
+                  className="space-y-2 mb-4 flex-grow"
+                  initial={{ height: 0 }}
+                  animate={{ height:   "auto"  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {service.features.map((feature, featureIndex) => (
+                    <li
+                      key={featureIndex}
+                      className="flex items-center text-sm text-muted-foreground"
+                    >
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </motion.ul>
+
+                <div className="flex flex-col gap-2 mt-auto">
+                  {/* {!isExpanded && (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="text-xs font-medium text-primary underline self-start hover:text-primary/80 transition-colors"
+                    >
+                      View more
+                    </button>
+                  )} */}
+                  
+                  <Button
+                    variant="outline"
+                    className="w-full group/btn transform transition-all duration-300 hover:scale-105 hover:shadow-md"
+                    asChild
+                  >
+                    {/* <Link href="/contact">
+                      <span className="flex items-center justify-center gap-2 py-3">
+                        Learn More
+                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                      </span>
+                    </Link> */}
+                  </Button>
+
+                  {/* {isExpanded && (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="text-xs font-medium text-primary underline self-start hover:text-primary/80 transition-colors"
+                    >
+                      View less
+                    </button>
+                  )} */}
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+        );
+      })}
+    </div>
+
+
+{/* servicfe grid no 2 try */}
+{/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+  {services.map((service, index) => (
+    <ScrollReveal key={index} delay={index * 0.1}>
+      <Card className="group hover:shadow-xl transition-all duration-300 border border-border h-[420px] w-full flex flex-col overflow-hidden">
+        <CardHeader className="pb-4 flex-shrink-0">
+          <div
+            className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+          >
+            <service.icon className={`w-6 h-6 ${service.color}`} />
+          </div>
+          <CardTitle className="text-xl font-semibold text-foreground text-center">
+            {service.title}
+          </CardTitle>
+        </CardHeader>
+
+        <CardContent className="flex flex-col h-full p-6 pt-0">
+          <p className="text-muted-foreground mb-4 flex-grow line-clamp-3">
+            {service.description}
+          </p>
+          <ul className="space-y-2 mb-6 flex-grow">
+            {service.features.slice(0, 3).map((feature, featureIndex) => (
+              <li
+                key={featureIndex}
+                className="flex items-center text-sm text-muted-foreground"
+              >
+                <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
+                {feature}
+              </li>
+            ))}
+          </ul>
+          <motion.div 
+            className="flex-grow-0"
+            initial={{ height: 0 }}
+            animate={{ height: expanded ? "auto" : 0 }}
+            transition={{ duration: 0.3 }}
+          />
+          <Button
+            variant="outline"
+            className="w-full group/btn mt-auto transform transition-all duration-300 hover:scale-105 hover:shadow-md"
+            asChild
+          >
+            <Link href="/contact">
+              <span className="flex items-center justify-center gap-2 py-3">
+                Learn More
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+              </span>
+            </Link>
+          </Button>
+        </CardContent>
+      </Card>
+    </ScrollReveal>
+  ))}
+</div> */}
+
+
+
+
           {/* Services Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
               <ScrollReveal key={index} delay={index * 0.1}>
                 <Card className="group hover:shadow-xl transition-all duration-300 border border-border h-full">
@@ -199,7 +355,25 @@ export default function ServicesPage() {
                 </Card>
               </ScrollReveal>
             ))}
-          </div>
+          </div> */}
+          <section className="mt-10 flex items-center justify-center">
+            <div className="text-center">
+         <Link href="/contact">
+                      <Button className="group relative overflow-hidden flex flex-" size="xl">
+                        <span className="relative z-10 flex items-center gap-2">
+                          Learn More
+                          {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" /> */}
+                        </span>
+                        <motion.div
+                          className="absolute inset-0 bg-white/20"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.6 }}
+                        />
+                      </Button>
+                </Link>
+                </div>
+                </section>
 
           {/* CTA Section */}
           <ScrollReveal delay={0.8}>

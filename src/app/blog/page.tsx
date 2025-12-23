@@ -141,9 +141,9 @@ export default function BlogPage() {
                 transition={{ duration: 0.8 }}
                 className="mb-4"
               >
-                <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
+                {/* <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
                   Blog & Insights
-                </span>
+                </span> */}
               </motion.div>
 
               <motion.h1
@@ -261,13 +261,13 @@ export default function BlogPage() {
           </ScrollReveal>
 
           {/* Blog Posts Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
             {filteredPosts
               .filter((post) => !post.featured)
               .map((post, index) => (
                 <ScrollReveal key={index} delay={index * 0.1}>
-                  <Card className="group hover:shadow-xl transition-all duration-300 border border-border h-full">
-                    <CardHeader>
+                  <Card className="group hover:shadow-xl transition-all duration-300 border border-border h-full flex flex-col">
+                    <CardHeader className="flex-shrink-0">
                       <div className="mb-4">
                         <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-medium">
                           {post.category}
@@ -313,7 +313,7 @@ export default function BlogPage() {
 
                       <Button
                         variant="outline"
-                        className="w-full group/btn mt-auto"
+                        className="w-full group/btn mx-auto"
                         asChild
                       >
                         <Link

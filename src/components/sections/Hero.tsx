@@ -116,7 +116,9 @@ export function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        
+        <section className="flex items-center justify-center mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto border-10 border-black rounded-full px-8 py-8">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
               50+
@@ -142,10 +144,11 @@ export function Hero() {
             <div className="text-muted-foreground">Production Ready</div>
           </div> */}
         </div>
+        </section>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
@@ -157,7 +160,7 @@ export function Hero() {
             transition={{ duration: 2, repeat: Infinity }}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

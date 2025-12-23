@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import {
   Chrome,
@@ -14,7 +15,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+
+  
+
 export function Features() {
+
+  const [expanded, setExpanded] = useState(false);
   const features = [
     {
       icon: Cpu,
@@ -130,9 +136,9 @@ export function Features() {
               transition={{ duration: 0.8 }}
               className="mb-4"
             >
-              <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary-foreground rounded-full text-sm font-medium border border-secondary/20">
+              {/* <span className="inline-block px-4 py-2 bg-secondary/10 text-secondary-foreground rounded-full text-sm font-medium border border-secondary/20">
                 Our Expertise
-              </span>
+              </span> */}
             </motion.div>
 
             <motion.h2
@@ -160,7 +166,39 @@ export function Features() {
           </div>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto items-stretch">
+        {features.map((feature, index) => (
+          <ScrollReveal key={index} delay={index * 0.1}>
+            <motion.div
+              className="group h-full p-6 rounded-2xl bg-white border border-border shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col"
+              whileHover={{ scale: 1.02, y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className={`w-12 h-12 ${feature.color.replace(
+                  "text-",
+                  "bg-"
+                )}/10 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-current/10`}
+                whileHover={{ rotate: 5 }}
+              >
+                <feature.icon className={`w-6 h-6 ${feature.color}`} />
+              </motion.div>
+
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300 text-foreground">
+                {feature.title}
+              </h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          </ScrollReveal>
+        ))}
+      </div>
+
+
+      {/* Working old code of our expertise */}
+        {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto ">
           {features.map((feature, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
               <motion.div
@@ -191,7 +229,13 @@ export function Features() {
               </motion.div>
             </ScrollReveal>
           ))}
-        </div>
+        </div> */}
+
+
+{/* First try */}
+
+       
+
 
         {/* Our Projects Preview */}
         <div className="mt-20">
@@ -199,42 +243,44 @@ export function Features() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
               Our Recent Work
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Project 1 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  🌦️ Weather Monitoring System
-                </h3>
-                <div className="text-muted-foreground mb-1">
-                  Industrial Applications
-                </div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Advanced system collecting diverse weather parameters via
-                  RS485 serial communication with real-time dashboard and LED
-                  panel integration.
-                </p>
-                <div className="text-xs text-primary font-medium">
-                  Tech Used: RS485, Sensors, Real-time Dashboard
-                </div>
-              </div>
-              {/* Project 2 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  🏥 Medical Device for Disease Testing
-                </h3>
-                <div className="text-muted-foreground mb-1">Healthcare</div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Cutting-edge solution for disease testing with seamless
-                  controller and Android app integration for efficient
-                  diagnostics.
-                </p>
-                <div className="text-xs text-primary font-medium">
-                  Tech Used: Controller, Android App, Medical Sensors
-                </div>
-              </div>
-              {/* Project 3 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
+             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+      {/* Project 1 */}
+      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+        <h3 className="text-xl font-semibold mb-2">
+          🌦️ Weather Monitoring System
+        </h3>
+        <div className="text-muted-foreground mb-1">
+          Industrial Applications
+        </div>
+        <p className="text-sm text-muted-foreground mb-2">
+          Advanced system collecting diverse weather parameters via RS485 serial
+          communication with real-time dashboard and LED panel integration.
+        </p>
+        <div className="mt-auto text-xs text-primary font-medium">
+          Tech Used: RS485, Sensors, Real-time Dashboard
+        </div>
+      </div>
+
+      {/* Project 2 */}
+      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+        <h3 className="text-xl font-semibold mb-2">
+          🏥 Medical Device for Disease Testing
+        </h3>
+        <div className="text-muted-foreground mb-1">Healthcare</div>
+        <p className="text-sm text-muted-foreground mb-2">
+          Cutting-edge solution for disease testing with seamless controller and
+          Android app integration for efficient diagnostics.
+        </p>
+        <div className="mt-auto text-xs text-primary font-medium">
+          Tech Used: Controller, Android App, Medical Sensors
+        </div>
+      </div>
+
+      {/* ... Project 3, 4, 5 (same pattern, flex flex-col h-full, mt-auto on last line) */}
+     {/* Project 3 */}
+      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+        <h3 className="text-xl font-semibold mb-2">
+          
                   🕷️ Spider Robot Controller
                 </h3>
                 <div className="text-muted-foreground mb-1">Robotics</div>
@@ -242,12 +288,13 @@ export function Features() {
                   Advanced controls and precision maneuvering system for spider
                   robots with innovative robotics solutions.
                 </p>
-                <div className="text-xs text-primary font-medium">
+                <div className="mt-auto text-xs text-primary font-medium">
                   Tech Used: Robotics Control, Precision Systems
                 </div>
               </div>
-              {/* Project 4 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
+  
+{/* Project 4 */}
+              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
                 <h3 className="text-xl font-semibold mb-2">
                   💡 LED Display Controller
                 </h3>
@@ -258,12 +305,12 @@ export function Features() {
                   Real-time data management system for LED panels with dynamic
                   content control and seamless updates.
                 </p>
-                <div className="text-xs text-primary font-medium">
+                <div className="mx-auto text-xs text-primary font-medium">
                   Tech Used: LED Control, Real-time Data Management
                 </div>
               </div>
               {/* Project 5 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
+              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
                 <h3 className="text-xl font-semibold mb-2">
                   🔧 System On Chip (SoC)
                 </h3>
@@ -274,33 +321,77 @@ export function Features() {
                   Integrated hardware components including processors, memory,
                   and peripherals in a single semiconductor chip.
                 </p>
-                <div className="text-xs text-primary font-medium">
+                <div className="mx-auto text-xs text-primary font-medium">
                   Tech Used: VLSI Design, Semiconductor Integration
                 </div>
               </div>
-              {/* Project 6 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
-                <h3 className="text-xl font-semibold mb-2">
-                  🏭 3-Axis Gantry System For Pharmaceutical
-                </h3>
-                <div className="text-muted-foreground mb-1">Industrial/IoT</div>
-                <p className="text-sm text-muted-foreground mb-2">
-                  Precision 3-axis motion control using CoreYZ mechanism.
-                  Automated testing of pharmaceutical solutions via electrodes.
-                  Integrated ultrasonic cleaning for probe maintenance.
-                  User-friendly custom GUI for complete system operation.
-                  Centralized control of motion and cleaning sequences.
-                  Real-time data logging and monitoring of test results.
-                </p>
-                <div className="text-xs text-primary font-medium">
-                  Tech Used: CoreYZ kinematics, NEMA 17 stepper motors, GT2
-                  belts & pulleys, Custom electrode interface, analog signal
-                  processing, Ultrasonic transducer module, MOSFET switching
-                  circuit, Arduino Mega, A4988/TMC stepper drivers, limit
-                  switches
-                </div>
-              </div>
-            </div>
+      {/* Project 6 – expandable card */}
+      <motion.div
+        layout
+        transition={{ type: "spring", duration: 0.6 }}
+        className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full cursor-pointer"
+        onClick={() => setExpanded((prev) => !prev)}
+      >
+        <h3 className="text-xl font-semibold mb-2">
+          🏭 3-Axis Gantry System For Pharmaceutical
+        </h3>
+        <div className="text-muted-foreground mb-1">Industrial/IoT</div>
+
+        {/* Collapsed vs expanded text */}
+        <motion.p
+          layout
+          className="text-sm text-muted-foreground mb-2"
+        >
+          {expanded ? (
+            <>
+              Precision 3-axis motion control using CoreYZ mechanism. Automated
+              testing of pharmaceutical solutions via electrodes. Integrated
+              ultrasonic cleaning for probe maintenance. User-friendly custom
+              GUI for complete system operation. Centralized control of motion
+              and cleaning sequences. Real-time data logging and monitoring of
+              test results.
+            </>
+          ) : (
+            <>
+              Precision 3-axis motion control using CoreYZ mechanism with
+              automated testing of pharmaceutical solutions and real-time data
+              logging.
+            </>
+          )}
+        </motion.p>
+
+        <motion.div
+          layout
+          className="mt-auto text-xs text-primary font-medium"
+        >
+          {expanded ? (
+            <>
+              Tech Used: CoreYZ kinematics, NEMA 17 stepper motors, GT2 belts &
+              pulleys, Custom electrode interface, analog signal processing,
+              Ultrasonic transducer module, MOSFET switching circuit, Arduino
+              Mega, A4988/TMC stepper drivers, limit switches
+            </>
+          ) : (
+            <>
+              Tech Used: CoreYZ kinematics, NEMA 17 stepper motors, Arduino
+              Mega, stepper drivers
+            </>
+          )}
+        </motion.div>
+
+        {/* View more / View less link */}
+        <button
+          type="button"
+          className="mt-3 text-xs font-medium text-primary underline inline-flex items-center gap-1 self-start"
+          onClick={(e) => {
+            e.stopPropagation(); // prevent double-toggle from card onClick
+            setExpanded((prev) => !prev);
+          }}
+        >
+          {expanded ? "View less" : "View more"}
+        </button>
+      </motion.div>
+    </div>
           </ScrollReveal>
         </div>
 
