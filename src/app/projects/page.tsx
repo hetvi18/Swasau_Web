@@ -49,21 +49,7 @@ export default function ProjectsPage() {
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },
-    {
-      icon: Building,
-      title: "Lift Dot Matrix Display",
-      industry: "Building Automation",
-      description:
-        "Custom dot-matrix display system for elevator floor and status indicators with advanced display driver technology.",
-      highlights: [
-        "Floor and status indicators",
-        "Custom dot-matrix display driver",
-        "Real-time updates",
-      ],
-      techUsed: ["Custom Display Driver", "Microcontroller"],
-      color: "text-primary",
-      bgColor: "bg-primary/10",
-    },
+    
     {
       icon: Hash,
       title: "Wireless Token Display System",
@@ -108,6 +94,21 @@ export default function ProjectsPage() {
       techUsed: ["GPS Module", "NB-IoT", "Accelerometer", "ESP32-C6"],
       color: "text-secondary",
       bgColor: "bg-secondary/10",
+    },
+    {
+      icon: Building,
+      title: "Lift Dot Matrix Display",
+      industry: "Building Automation",
+      description:
+        "Custom dot-matrix display system for elevator floor and status indicators with advanced display driver technology.",
+      highlights: [
+        "Floor and status indicators",
+        "Custom dot-matrix display driver",
+        "Real-time updates",
+      ],
+      techUsed: ["Custom Display Driver", "Microcontroller"],
+      color: "text-primary",
+      bgColor: "bg-primary/10",
     },
   ];
 
@@ -275,7 +276,7 @@ export default function ProjectsPage() {
                     </Link>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <Link href="/services">View Our Services</Link>
+                    <Link href="/contact">Schedule a Meeting</Link>
                   </Button>
                 </div>
               </div>

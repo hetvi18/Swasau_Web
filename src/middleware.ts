@@ -10,6 +10,8 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api/auth") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/static") ||
+    request.nextUrl.pathname.startsWith('/images/') ||
+    request.nextUrl.pathname.startsWith('/public/') ||
     pathname === "/" ||
     pathname === "/login" ||
     pathname === "/signup" ||

@@ -147,10 +147,10 @@ export function Features() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-3xl md:text-5xl font-bold mb-6 text-foreground"
             >
-              <span className="font-black">Our Expertise</span>
+              {/* <span className="font-black">Our Expertise</span> */}
               <span className="gradient-text">
                 {" "}
-                - Custom Embedded Solutions For Every Industry
+                 Custom Embedded Solutions For Every Industry
               </span>
             </motion.h2>
 

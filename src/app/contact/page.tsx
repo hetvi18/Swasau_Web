@@ -88,8 +88,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+91-9876543210",
-      link: "tel:+919876543210",
+      value: "+91-9426404816",
+      link: "tel:+919426404816",
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },
@@ -104,8 +104,8 @@ export default function ContactPage() {
     {
       icon: MessageSquare,
       title: "WhatsApp",
-      value: "+91-9876543210",
-      link: "https://wa.me/919876543210",
+      value: "+91-9426404816",
+      link: "https://wa.me/919426404816",
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },

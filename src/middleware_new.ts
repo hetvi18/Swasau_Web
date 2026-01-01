@@ -15,6 +15,8 @@ export function middleware(request: NextRequest) {
     pathname.startsWith("/api/waitlist") ||
     pathname.startsWith("/_next") ||
     pathname.startsWith("/favicon") ||
+    request.nextUrl.pathname.startsWith('/images/') ||
+    request.nextUrl.pathname.startsWith('/public/') ||
     pathname === "/" ||
     pathname === "/about" ||
     pathname === "/services" ||

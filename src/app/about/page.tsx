@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import {
   Target,
   Users,
@@ -54,8 +55,16 @@ export default function AboutPage() {
 
   const team = [
     {
+      name: "Dr. Mihir Shah",
+      role: "Director & CTO",
+      description:
+        "An accomplished academician with BE (Electronics), ME (Electronics and Communication with VLSI specialization), and Ph.D. (Electrical Engineering). Over 28 years of teaching experience and 6 years in R&D.",
+      expertise: ["VLSI Design", "Electronics", "R&D"],
+      avatar: "/images/Logo.jpg",
+    },
+    {
       name: "Kiran Shah",
-      role: "CEO & Co-Founder",
+      role: "Director & CEO",
       description:
         "Completed Diploma Commercial Practice from Government Girls Polytechnic, Ahmedabad in 1990 and B.Com from Gujarat University in 1992. Brings a unique blend of creativity, strategic thinking, and deep understanding of market dynamics.",
       expertise: [
@@ -65,50 +74,26 @@ export default function AboutPage() {
       ],
       avatar: "KS",
     },
+    
     {
-      name: "Dr. Mihir Shah",
-      role: "CTO & Founder",
+      name: "Ayan Vaidya",
+      role: "Senior Embedded Firmware Engineer",
       description:
-        "An accomplished academician with BE (Electronics), ME (Electronics and Communication with VLSI specialization), and Ph.D. (Electrical Engineering). Over 26 years of teaching experience and 3.5 years in R&D.",
-      expertise: ["VLSI Design", "Electronics", "R&D", "Academic Leadership"],
-      avatar: "MS",
-    },
-    {
-      name: "Neel Raval",
-      role: "Intern",
-      description:
-        "Dedicated intern contributing to our innovative projects and learning from our experienced team.",
-      expertise: ["Embedded Systems", "Learning"],
+        "Experienced in embedded systems development and firmware engineering for out cutting-edge projects",
+      expertise: ["Embedded Systems", "Firmware Engineering", "C/C++"],
       avatar: "NR",
-    },
-
-    {
-      name: "Manav Shah",
-      role: "Intern",
-      description:
-        "Passionate intern working on embedded systems and IoT projects.",
-      expertise: ["IoT", "Embedded Systems"],
-      avatar: "MS",
     },
     {
       name: "Niraj Patel",
-      role: "Electronic Hardware Engineer",
+      role: "Senior Hardware Engineer",
       description:
         "Specialized in electronic hardware design and PCB development for our innovative solutions.",
       expertise: ["Hardware Design", "PCB Design", "Electronics"],
       avatar: "NP",
     },
     {
-      name: "Ayan Vaidya",
-      role: "Senior Embedded Firmware Engineer",
-      description:
-        "Experienced in embedded systems development and firmware engineering for our cutting-edge projects.",
-      expertise: ["Embedded Systems", "Firmware Engineering", "C/C++"],
-      avatar: "AV",
-    },
-    {
       name: "Harsh Balsaraf",
-      role: "Design Engineer",
+      role: "Senior Design Engineer",
       description:
         "Focused on product design and engineering solutions for our innovative projects.",
       expertise: ["Product Design", "Engineering", "CAD"],
@@ -123,12 +108,20 @@ export default function AboutPage() {
       avatar: "DP",
     },
     {
-      name: "Chirag Patel",
-      role: "Intern",
+      name: "Swasti Gandhi",
+      role: "Technical Lead",
       description:
-        "Passionate intern learning and contributing to our engineering projects.",
-      expertise: ["Learning", "Engineering"],
-      avatar: "CP",
+        "Worked at Einfochips and NVIDIA for 7 years as a Design Verification Engineer, gaining extensive experience in verification methodologies, chip design validation and ensuring high quality product  delivery",
+      expertise: ["Design Verification", "ASIC Verification", "AI"],
+      avatar: "SG",
+    },
+    {
+      name: "Hetvi Patel",
+      role: "Software Engineer & AI Developer",
+      description:
+      "Specialized in AI Tools and ML Algorithm development, Product Marketing, Client Approach and Cliet Acquisition ",
+      expertise: ["AI Tools", "Product Marketing", "ML Algorithms"],
+      avatar: "HP",
     },
   ];
 
@@ -163,10 +156,10 @@ export default function AboutPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-4xl md:text-6xl font-bold mb-6 text-foreground"
               >
-                <span className="font-black">About Us</span>
+                {/* <span className="font-black">About Us</span> */}
                 <span className="gradient-text">
                   {" "}
-                  - Creating Dream Solutions Since Day One
+                  Creating Dream Solutions Since Day One
                 </span>
               </motion.h1>
 
@@ -233,7 +226,7 @@ export default function AboutPage() {
           </div>
 
           {/* Stats */}
-          <ScrollReveal delay={0.4}>
+          {/* <ScrollReveal delay={0.4}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
               {stats.map((stat, index) => (
                 <motion.div
@@ -251,7 +244,7 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
 
           {/* Values */}
           <ScrollReveal delay={0.6}>
@@ -300,7 +293,15 @@ export default function AboutPage() {
                     >
                       <CardHeader className="text-center">
                         <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-2xl mx-auto mb-4">
-                          {member.avatar}
+                          {/* {member.avatar} */}
+                           <img
+        src={member.avatar}      // ✅ from constant
+        alt={member.name}
+        // width={}
+        // height={48}
+        className="rounded-full "
+      />
+                          {/* <UserAvatar src={member.avatar}  /> */}
                         </div>
                         <CardTitle className="text-xl font-semibold text-foreground">
                           {member.name}
@@ -338,7 +339,7 @@ export default function AboutPage() {
                 collaborative force committed to turning innovative ideas into
                 reality.
               </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {team.slice(2).map((member, index) => (
                   <Card key={index} className="border border-border">
                     <CardHeader className="text-center">

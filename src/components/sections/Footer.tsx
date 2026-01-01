@@ -101,18 +101,18 @@ export function Footer() {
 
               {/* Product Links */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.8, delay: 0.1 }}
               >
                 <h3 className="font-semibold text-foreground mb-4">Product</h3>
                 <ul className="space-y-3">
                   {footerLinks.product.map((link, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + index * 0.1 }}
+                      // initial={{ opacity: 0, x: -20 }}
+                      // whileInView={{ opacity: 1, x: 0 }}
+                      // transition={{ delay: 0.1 + index * 0.1 }}
                     >
                       <a
                         href={link.href}
@@ -127,9 +127,9 @@ export function Footer() {
 
               {/* Solutions Links */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <h3 className="font-semibold text-foreground mb-4">
                   Solutions
@@ -138,9 +138,9 @@ export function Footer() {
                   {footerLinks.solutions.map((link, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 + index * 0.1 }}
+                      // initial={{ opacity: 0, x: -20 }}
+                      // whileInView={{ opacity: 1, x: 0 }}
+                      // transition={{ delay: 0.2 + index * 0.1 }}
                     >
                       <a
                         href={link.href}
@@ -155,9 +155,9 @@ export function Footer() {
 
               {/* Resources Links */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <h3 className="font-semibold text-foreground mb-4">
                   Resources
@@ -166,9 +166,9 @@ export function Footer() {
                   {footerLinks.resources.map((link, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
+                      // initial={{ opacity: 0, x: -20 }}
+                      // whileInView={{ opacity: 1, x: 0 }}
+                      // transition={{ delay: 0.3 + index * 0.1 }}
                     >
                       <a
                         href={link.href}
@@ -183,18 +183,18 @@ export function Footer() {
 
               {/* Company Links */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <h3 className="font-semibold text-foreground mb-4">Company</h3>
                 <ul className="space-y-3">
                   {footerLinks.company.map((link, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 + index * 0.1 }}
+                      // initial={{ opacity: 0, x: -20 }}
+                      // whileInView={{ opacity: 1, x: 0 }}
+                      // transition={{ delay: 0.4 + index * 0.1 }}
                     >
                       <a
                         href={link.href}
@@ -215,7 +215,7 @@ export function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            // transition={{ duration: 0.8 }}
             className="border-t border-border pt-8 mt-12"
           >
             <div className="flex flex-col md:flex-row justify-between items-center">

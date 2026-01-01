@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Shield, Menu, X, ArrowRight, User, LogOut } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/contexts/AuthContext";
+import Image from "next/image";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,13 +50,27 @@ export function Navbar() {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
+            {/* <Link href="/" className="flex items-center gap-3"> */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
+
+              <div className="w-50 h-16 rounded-lg flex items-center justify-center">
+                {/* <div className=" flex items-center justify-center"> */}
+       <Image
+        src="/images/Logo.jpg"   // put logo.jpeg in public/images/
+        alt="Swasau Technology logo"
+          width={100}
+          height={50}
+        className="w-full h-full object-contain object-center"
+      />
+                {/* <Shield className="w-5 h-5 text-white" /> */}
+                {/* <img src="/images/logo.jpeg" 
+                alt="logo"
+                width={400} 
+                height={70} /> */}
               </div>
-              <span className="text-xl font-bold text-foreground">
+              {/* <span className="text-xl font-bold text-foreground">
                 SWASAU Technology
-              </span>
+              </span> */}
             </Link>
           </motion.div>
 

@@ -33,7 +33,7 @@ export default function ServicesPage() {
       icon: Cpu,
       title: "Embedded Hardware Design",
       description:
-        "Custom PCB design, schematic capture, and hardware architecture for your specific requirements.",
+        "Custom PCB design, schematic design, and hardware architecture for your specific requirements.",
       features: [
         "Schematic design and PCB layout",
         "Component selection and sourcing",
@@ -65,7 +65,7 @@ export default function ServicesPage() {
       description:
         "Quick turnaround prototyping to validate your concepts and ideas.",
       features: [
-        "3D printing and CNC machining",
+        "3D printing",
         "Electronics prototyping",
         "Functional testing",
         "Iterative design",

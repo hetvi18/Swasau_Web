@@ -180,7 +180,7 @@ export function Testimonials() {
         </div>
 
         {/* Stats */}
-        <ScrollReveal delay={0.6}>
+        {/* <ScrollReveal delay={0.6}>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
             <motion.div
               className="text-center p-6 rounded-2xl bg-white shadow-sm border border-border hover:shadow-md transition-shadow duration-300"
@@ -215,7 +215,7 @@ export function Testimonials() {
               <div className="text-sm text-muted-foreground">Response Time</div>
             </motion.div>
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
       </div>
     </section>
   );
