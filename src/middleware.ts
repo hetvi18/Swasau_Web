@@ -17,6 +17,7 @@ export function middleware(request: NextRequest) {
     pathname === "/signup" ||
     pathname === "/about" ||
     pathname === "/contact" ||
+    pathname === "/internship" ||
     pathname === "/services" ||
     pathname === "/projects" ||
     pathname === "/blog" ||

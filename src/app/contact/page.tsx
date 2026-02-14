@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { validatePhoneNumber } from "@/lib/utils";
+import GoogleMapOffice from '@/components/GoogleMapOffice'; 
+
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -218,7 +220,7 @@ export default function ContactPage() {
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${
                             phoneError ? "border-red-500" : "border-border"
                           }`}
-                          placeholder="9876543210"
+                          placeholder="9426404816"
                         />
                         {phoneError && (
                           <p className="text-sm text-red-600 mt-1">
@@ -369,20 +371,25 @@ export default function ContactPage() {
                   <CardHeader>
                     <CardTitle className="text-2xl font-bold text-foreground">
                       Our Location
+                      
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+                    <div className="w-full h-full md:h-[500px] rounded-lg shadow-lg overflow-hidden">
+                        <GoogleMapOffice />
+                    </div>
+                    {/* <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
                       <div className="text-center">
                         <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
                         <p className="text-muted-foreground">
-                          Google Maps Integration
+                          
+                          <GoogleMapOffice />
                         </p>
                         <p className="text-sm text-muted-foreground">
                           Ahmedabad, India
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </CardContent>
                 </Card>
               </ScrollReveal>
@@ -412,7 +419,7 @@ export default function ContactPage() {
                     asChild
                   >
                     <a
-                      href="https://wa.me/919876543210"
+                      href="https://wa.me/919426404816"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

@@ -45,7 +45,7 @@ export default function ProjectsPage() {
         "Rugged outdoor enclosure",
         "Real-time data collection",
       ],
-      techUsed: ["STM32", "RP2040", "RS485"],
+      techUsed: ["STM32", "RP2040", "RS485", "I2C"],
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },
@@ -61,7 +61,7 @@ export default function ProjectsPage() {
         "Wireless updates using RF/Bluetooth",
         "Audio prompt integration",
       ],
-      techUsed: ["NRF24L01", "STM8", "7-Segment"],
+      techUsed: ["NRF24L01", "STM8", "ESP32", "7-Segment"],
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },
@@ -95,6 +95,22 @@ export default function ProjectsPage() {
       color: "text-secondary",
       bgColor: "bg-secondary/10",
     },
+      {
+      icon: Building,
+      title: "3 Axis Gantry System for Pharmaceutical",
+      industry: "Industry / Pharma",
+      description:
+        "Precise 3-axis motion control and Automated testing of pharmaceutical solutions",
+      highlights: [
+        "Highly precise, 3 - axis movement",
+        "Compact automated lab testing solution",
+        "Integrated cleaning cycles and test sequencing",
+        "Centralized control and real-time data logging",
+      ],
+      techUsed: ["Arduino", "NEMA17", "A4988/TMC"],
+      color: "text-secondary",
+      bgColor: "bg-secondary/10",
+    },
     {
       icon: Building,
       title: "Lift Dot Matrix Display",
@@ -114,6 +130,8 @@ export default function ProjectsPage() {
 
   return (
     <main className="min-h-screen bg-white pt-20">
+      {/* <Project /> */}
+      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="container mx-auto px-4">

@@ -6,6 +6,7 @@ import { Pricing } from "@/components/sections/Pricing";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 import { SelectedInterns } from "@/components/sections/SelectedInterns";
+// import { Project } from "@/components/sections/Project";
 import Link from "next/link";
 // import FileUpload from "@/components/FileUpload";
 

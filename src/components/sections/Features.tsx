@@ -3,22 +3,39 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+// import { ProjectsPage } from "@/app/projects";
 import {
   Chrome,
+  Wifi,
   Zap,
   Shield,
   Cpu,
   Lock,
+  ArrowRight,
   Database,
   Network,
   Bot,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
+import Link from "next/link";
+import Image from 'next/image'
 
   
 
 export function Features() {
+
+const ALL_TECH_LOGOS = [
+  '/images/Nordic.png',
+  '/images/Arduino.png',
+  '/images/AWS.png',
+  '/images/Azure.png',
+  '/images/Blynk.png',
+  '/images/Firebase.png',
+  '/images/AltiumLogo.png',
+  '/images/KiCAD.png',
+  '/images/Fusion360_logo.png'
+
+]
 
   const [expanded, setExpanded] = useState(false);
   const features = [
@@ -196,7 +213,6 @@ export function Features() {
         ))}
       </div>
 
-
       {/* Working old code of our expertise */}
         {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto ">
           {features.map((feature, index) => (
@@ -238,14 +254,14 @@ export function Features() {
 
 
         {/* Our Projects Preview */}
-        <div className="mt-20">
+         <div className="mt-20">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
               Our Recent Work
             </h2>
-             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"> 
       {/* Project 1 */}
-      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+       <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
         <h3 className="text-xl font-semibold mb-2">
           🌦️ Weather Monitoring System
         </h3>
@@ -253,80 +269,174 @@ export function Features() {
           Industrial Applications
         </div>
         <p className="text-sm text-muted-foreground mb-2">
-          Advanced system collecting diverse weather parameters via RS485 serial
-          communication with real-time dashboard and LED panel integration.
+          A plug-and-play module that converts RS232 serial data to USB with real-time wireless transmission capabilities."
+          {/* Advanced system collecting diverse weather parameters via RS485 serial
+          communication with real-time dashboard and LED panel integration. */}
         </p>
         <div className="mt-auto text-xs text-primary font-medium">
-          Tech Used: RS485, Sensors, Real-time Dashboard
+          Tech Used: ESP32, UART, USB Host Shield {/* RS485, Sensors, Real-time Dashboard */}
         </div>
-      </div>
+         <Button
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+      </div> 
 
       {/* Project 2 */}
-      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+       <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
         <h3 className="text-xl font-semibold mb-2">
           🏥 Medical Device for Disease Testing
         </h3>
         <div className="text-muted-foreground mb-1">Healthcare</div>
         <p className="text-sm text-muted-foreground mb-2">
-          Cutting-edge solution for disease testing with seamless controller and
-          Android app integration for efficient diagnostics.
+          Custom embedded medical device for accurate and fast disease detection with advanced diagnostic capabilities
+          {/* Cutting-edge solution for disease testing with seamless controller and
+          Android app integration for efficient diagnostics. */}
         </p>
         <div className="mt-auto text-xs text-primary font-medium">
-          Tech Used: Controller, Android App, Medical Sensors
+          Tech Used: Controller, Android App, Medical Sensors, Embedded System
         </div>
-      </div>
+        <Button 
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+      </div> 
+
 
       {/* ... Project 3, 4, 5 (same pattern, flex flex-col h-full, mt-auto on last line) */}
      {/* Project 3 */}
-      <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+       <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
         <h3 className="text-xl font-semibold mb-2">
           
-                  🕷️ Spider Robot Controller
+                  🛜 Wireless Data Transmission System for RS232 to USB"
                 </h3>
-                <div className="text-muted-foreground mb-1">Robotics</div>
+                <div className="text-muted-foreground mb-1">Retail / Industrial Automation</div>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Advanced controls and precision maneuvering system for spider
-                  robots with innovative robotics solutions.
+                  A plug-and-play module that converts RS232 serial data to USB with real-time wireless transmission capabilities.
+                  {/* Advanced controls and precision maneuvering system for spider
+                  robots with innovative robotics solutions. */}
                 </p>
                 <div className="mt-auto text-xs text-primary font-medium">
-                  Tech Used: Robotics Control, Precision Systems
+                  Tech Used: ESP32, UART, USB Host Shield
                 </div>
-              </div>
+                <Button 
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+              </div> 
   
 {/* Project 4 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
                 <h3 className="text-xl font-semibold mb-2">
-                  💡 LED Display Controller
+                  💡 Wireless Token Display System
                 </h3>
                 <div className="text-muted-foreground mb-1">
-                  Display Systems
+                  Hospitals / Service Centers
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Real-time data management system for LED panels with dynamic
-                  content control and seamless updates.
+                  Multi-point display system with central control for queue management in healthcare and service environments.
+                  {/* Real-time data management system for LED panels with dynamic
+                  content control and seamless updates. */}
                 </p>
                 <div className="mx-auto text-xs text-primary font-medium">
-                  Tech Used: LED Control, Real-time Data Management
+                  NRF24L01, STM8, ESP32, 7-Segment
+                  {/* Tech Used: LED Control, Real-time Data Management */}
                 </div>
-              </div>
+                 <Button 
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+              </div> 
               {/* Project 5 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
                 <h3 className="text-xl font-semibold mb-2">
-                  🔧 System On Chip (SoC)
+                  📍 Pet Health & Location Tracking Device
                 </h3>
                 <div className="text-muted-foreground mb-1">
-                  Semiconductor Design
+                 Consumer / IoT
                 </div>
                 <p className="text-sm text-muted-foreground mb-2">
-                  Integrated hardware components including processors, memory,
-                  and peripherals in a single semiconductor chip.
+                  Comprehensive pet tracking solution with health monitoring and GPS location tracking capabilities.
+                  {/* Integrated hardware components including processors, memory,
+                  and peripherals in a single semiconductor chip. */}
                 </p>
                 <div className="mx-auto text-xs text-primary font-medium">
-                  Tech Used: VLSI Design, Semiconductor Integration
+                  Tech Used: GPS Module, NB-IoT, Accelerometer, ESP32-C6
                 </div>
-              </div>
+                 <Button 
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+              </div> 
       {/* Project 6 – expandable card */}
-      <motion.div
+       <div className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full">
+                <h3 className="text-xl font-semibold mb-2">
+                   🏭 3-Axis Gantry System For Pharmaceutical
+                </h3>
+                <div className="text-muted-foreground mb-1">
+                 Industry / Pharma
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">
+                  Precise 3-axis motion control and Automated testing of pharmaceutical solutions
+                 
+                </p>
+                <div className="mx-auto text-xs text-primary font-medium">
+                  Tech Used: Arduino, NEMA17, A4988/TMC
+                </div>
+                 <Button 
+                      variant="outline"
+                      className="mt-2 w-full group/btn mx-auto"
+                      asChild
+                    >
+                      <Link href="/projects">
+                        <span className="flex items-center gap-2">
+                          View More
+                          <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </span>
+                      </Link>
+                    </Button>
+              </div> 
+      {/* <motion.div
         layout
         transition={{ type: "spring", duration: 0.6 }}
         className="p-6 rounded-2xl bg-white border border-border shadow-sm flex flex-col h-full cursor-pointer"
@@ -335,10 +445,10 @@ export function Features() {
         <h3 className="text-xl font-semibold mb-2">
           🏭 3-Axis Gantry System For Pharmaceutical
         </h3>
-        <div className="text-muted-foreground mb-1">Industrial/IoT</div>
+        <div className="text-muted-foreground mb-1">Industrial/IoT</div> 
 
-        {/* Collapsed vs expanded text */}
-        <motion.p
+        
+       <motion.p
           layout
           className="text-sm text-muted-foreground mb-2"
         >
@@ -379,7 +489,7 @@ export function Features() {
           )}
         </motion.div>
 
-        {/* View more / View less link */}
+      
         <button
           type="button"
           className="mt-3 text-xs font-medium text-primary underline inline-flex items-center gap-1 self-start"
@@ -390,12 +500,12 @@ export function Features() {
         >
           {expanded ? "View less" : "View more"}
         </button>
-      </motion.div>
+      </motion.div> */}
     </div>
           </ScrollReveal>
-        </div>
+        </div> 
 
-        {/* Why Choose Us */}
+         {/* Why Choose Us */}
         <div className="mt-20 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl p-8">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
@@ -436,10 +546,42 @@ export function Features() {
               </div>
             </div>
           </ScrollReveal>
-        </div>
+        </div> 
 
-        {/* Technology Stack */}
-        <div className="mt-20">
+        {/* Tech we use new with logo */}
+        <div className="w-full py-16 bg-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
+              Technology Stack
+            </h2>
+
+            <h4 className="text-xl md:text-2xl mb-8 text-center text-foreground">
+              Technologies we use to provide best in class solutions to our clients.
+            </h4>
+
+            {/*  */}
+      <div className="w-full py-12 bg-white overflow-hidden">
+      {/* Zero gap flex - wraps automatically */}
+      <div className="flex flex-wrap items-center justify-center gap-0 px-2 sm:px-4">
+        {ALL_TECH_LOGOS.map((logo, index) => (
+          <div 
+            key={index}
+            className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 flex-shrink-0 mx-0 border-l border-slate-200 first:border-l-0 last:border-r hover:border-slate-400 hover:shadow-md transition-all"
+          >
+            <Image
+              src={logo}
+              alt=""
+              width={128}
+              height={128}
+              className="object-contain w-full h-full p-3 sm:p-4 opacity-90 hover:opacity-100"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
+        
+        {/* Technology Stack In Last Version */}
+         {/* <div className="mt-20">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
               Technology Stack
@@ -471,10 +613,10 @@ export function Features() {
               </div>
             </div>
           </ScrollReveal>
-        </div>
+        </div>  */}
 
         {/* Our Clients */}
-        <div className="mt-20">
+         <div className="mt-5">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-foreground">
               Our Clients
@@ -484,7 +626,7 @@ export function Features() {
               we've built with our clients. From startups to established
               enterprises, our engineering services have left a lasting impact.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"> 
               {/* Client 1 */}
               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -505,9 +647,9 @@ export function Features() {
                     Visit them
                   </a>
                 </Button>
-              </div>
+              </div> 
               {/* Client 2 */}
-              <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
+               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
                   Oizom
                 </h3>
@@ -526,7 +668,7 @@ export function Features() {
                     Visit them
                   </a>
                 </Button>
-              </div>
+              </div> 
               {/* Client 3 */}
               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -546,7 +688,7 @@ export function Features() {
                     Visit them
                   </a>
                 </Button>
-              </div>
+              </div> 
               {/* Client 4 */}
               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -566,7 +708,7 @@ export function Features() {
                     Visit them
                   </a>
                 </Button>
-              </div>
+              </div> 
               {/* Client 5 */}
               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -587,7 +729,7 @@ export function Features() {
                     Visit them
                   </a>
                 </Button>
-              </div>
+              </div> 
               {/* Client 6 */}
               <div className="p-6 rounded-2xl bg-white border border-border shadow-sm">
                 <h3 className="text-xl font-semibold mb-2 text-foreground">
@@ -610,7 +752,7 @@ export function Features() {
               </div>
             </div>
           </ScrollReveal>
-        </div>
+        </div> 
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function AboutPage() {
       description:
         "An accomplished academician with BE (Electronics), ME (Electronics and Communication with VLSI specialization), and Ph.D. (Electrical Engineering). Over 28 years of teaching experience and 6 years in R&D.",
       expertise: ["VLSI Design", "Electronics", "R&D"],
-      avatar: "/images/Logo.jpg",
+      avatar: "/images/Mihirbhai.jpg",
     },
     {
       name: "Kiran Shah",
@@ -72,7 +72,7 @@ export default function AboutPage() {
         "Business Development",
         "Market Analysis",
       ],
-      avatar: "KS",
+      avatar: "/images/Kiranben.jpg",
     },
     
     {
@@ -81,7 +81,7 @@ export default function AboutPage() {
       description:
         "Experienced in embedded systems development and firmware engineering for out cutting-edge projects",
       expertise: ["Embedded Systems", "Firmware Engineering", "C/C++"],
-      avatar: "NR",
+      avatar: "/images/Ayan.jpg",
     },
     {
       name: "Niraj Patel",
@@ -89,7 +89,7 @@ export default function AboutPage() {
       description:
         "Specialized in electronic hardware design and PCB development for our innovative solutions.",
       expertise: ["Hardware Design", "PCB Design", "Electronics"],
-      avatar: "NP",
+      avatar: "/images/Niraj.png",
     },
     {
       name: "Harsh Balsaraf",
@@ -97,7 +97,7 @@ export default function AboutPage() {
       description:
         "Focused on product design and engineering solutions for our innovative projects.",
       expertise: ["Product Design", "Engineering", "CAD"],
-      avatar: "HB",
+      avatar: "/images/Harsh.png",
     },
     {
       name: "Darsh Patel",
@@ -105,7 +105,7 @@ export default function AboutPage() {
       description:
         "Specialized in embedded systems development and microcontroller programming.",
       expertise: ["Embedded Systems", "Microcontrollers", "Programming"],
-      avatar: "DP",
+      avatar: "/images/Darsh.png",
     },
     {
       name: "Swasti Gandhi",
@@ -113,7 +113,7 @@ export default function AboutPage() {
       description:
         "Worked at Einfochips and NVIDIA for 7 years as a Design Verification Engineer, gaining extensive experience in verification methodologies, chip design validation and ensuring high quality product  delivery",
       expertise: ["Design Verification", "ASIC Verification", "AI"],
-      avatar: "SG",
+      avatar: "/images/Swasti.png",
     },
     {
       name: "Hetvi Patel",
@@ -121,7 +121,7 @@ export default function AboutPage() {
       description:
       "Specialized in AI Tools and ML Algorithm development, Product Marketing, Client Approach and Cliet Acquisition ",
       expertise: ["AI Tools", "Product Marketing", "ML Algorithms"],
-      avatar: "HP",
+      avatar: "/images/Hetvi.jpg",
     },
   ];
 
@@ -343,8 +343,15 @@ export default function AboutPage() {
                 {team.slice(2).map((member, index) => (
                   <Card key={index} className="border border-border">
                     <CardHeader className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                        {member.avatar}
+                      <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                        {/* {member.avatar} */}
+                        <img
+        src={member.avatar}      // ✅ from constant
+        alt={member.name}
+        // width={}
+        // height={48}
+        className="rounded-full "
+      />
                       </div>
                       <CardTitle className="text-lg font-semibold text-foreground">
                         {member.name}
